@@ -7,21 +7,21 @@ use App\Http\Controllers\Admin\SupportController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\PacientController;
 
-// Ruta del dashboard
+// Dashboard route
 Route::get('/', function () {
     return view(('admin.dashboard'));
 })->name('dashboard');
 
-// Gestión de roles y permisos
+// Permission and roles
 Route::resource(
     'roles', 
     RoleController::class
 );
 
-// Gestión de usuarios
+// Users
 Route::resource('users', UserController::class);
 
-// Gestión de pacientes
+// Patients
 Route::resource('patients', PacientController::class);
 
 // Gestión de doctores
