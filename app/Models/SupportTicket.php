@@ -8,6 +8,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class SupportTicket extends Model
 {
     /**
+     * Habilitar timestamps automáticos
+     *
+     * @var bool
+     */
+    public $timestamps = true;
+
+    /**
      * Los atributos que pueden ser asignados masivamente.
      *
      * @var array<int, string>

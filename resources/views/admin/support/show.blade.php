@@ -31,11 +31,11 @@
         <div class="grid grid-cols-2 gap-6 mb-6">
             <div>
                 <p class="text-sm text-gray-600">Fecha de Creación</p>
-                <p class="text-lg font-semibold text-gray-800">{{ $supportTicket->created_at->format('d/m/Y H:i') }}</p>
+                <p class="text-lg font-semibold text-gray-800">{{ $supportTicket->created_at?->format('d/m/Y H:i') ?? 'N/A' }}</p>
             </div>
             <div>
                 <p class="text-sm text-gray-600">Última Actualización</p>
-                <p class="text-lg font-semibold text-gray-800">{{ $supportTicket->updated_at->format('d/m/Y H:i') }}</p>
+                <p class="text-lg font-semibold text-gray-800">{{ $supportTicket->updated_at?->format('d/m/Y H:i') ?? 'N/A' }}</p>
             </div>
         </div>
 

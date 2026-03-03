@@ -25,7 +25,6 @@
                             <th class="px-6 py-3">Título</th>
                             <th class="px-6 py-3">Estado</th>
                             <th class="px-6 py-3">Fecha</th>
-                            <th class="px-6 py-3">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -44,11 +43,6 @@
                                     @endif
                                 </td>
                                 <td class="px-6 py-4">{{ $ticket->created_at->format('d/m/Y H:i') }}</td>
-                                <td class="px-6 py-4">
-                                    <a href="{{ route('admin.support.show', $ticket) }}" class="inline-flex items-center px-2 py-1 bg-gray-600 hover:bg-gray-700 text-white text-xs font-semibold rounded">
-                                        <i class="fas fa-eye mr-1"></i> Ver
-                                    </a>
-                                </td>
                             </tr>
                         @endforeach
                     </tbody>
