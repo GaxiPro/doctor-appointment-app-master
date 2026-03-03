@@ -3,25 +3,30 @@
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\DoctorController;
+use App\Http\Controllers\Admin\SupportController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\PacientController;
 
+// Dashboard route
 Route::get('/', function () {
     return view(('admin.dashboard'));
 })->name('dashboard');
 
-// Gestion de roles
+// Permission and roles
 Route::resource(
     'roles', 
     RoleController::class
 );
 
-// Gestion de usuarios
+// Users
 Route::resource('users', UserController::class);
 
-// Gestion de pacientes
+// Patients
 Route::resource('patients', PacientController::class);
 
-// Gestion de doctores
+// Gestión de doctores
 Route::resource('doctors', DoctorController::class)->except(['show']);
 Route::get('doctors/{doctor}/show', [DoctorController::class, 'show'])->name('doctors.show');
+
+// Gestión de tickets de soporte
+Route::resource('support', SupportController::class);
